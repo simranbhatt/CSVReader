@@ -1,0 +1,30 @@
+const fileStream = require('fs')
+const multiStream = require('multistream')
+var removeBOM = require('remove-bom-stream');
+const csv = require("csv-parser")
+
+require('dotenv').config({path: '../.env'})
+
+exports.sort = function(req, res) {
+    var dataArray = []
+    const streams = [
+    fileStream.createReadStream(process.env.BOOKFILE),
+    fileStream.createReadStream(process.env.MAGAZINEFILE)
+    ]
+    new multiStream(streams)
+    .pipe(removeBOM('utf-8'))
+    .pipe(csv({separator: ';'}))
+    .on("data", (row) => { 
+        dataArray.push(row)
+    })
+    .on("end", () => {
+        dataArray.sort(function (a, b) {
+            if (a.title > b.title) return 1;
+            if (a.title < b.title) return -1;
+            return 0;
+          });
+          dataArray.splice(dataArray.findIndex(item => item.isbn === "isbn"), 1)
+          res.json(dataArray)
+    })
+    .on("error", (error) => console.log(error.message))
+};
