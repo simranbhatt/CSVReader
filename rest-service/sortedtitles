@@ -3,10 +3,10 @@ const multiStream = require('multistream')
 var removeBOM = require('remove-bom-stream');
 const csv = require("csv-parser")
 
-require('dotenv').config({path: '../.env'})
-
+//function to sort all books and magazines by title (ascending order)
 exports.sort = function(req, res) {
     var dataArray = []
+    //combined stream of books.csv and magazines.csv 
     const streams = [
     fileStream.createReadStream(process.env.BOOKFILE),
     fileStream.createReadStream(process.env.MAGAZINEFILE)
@@ -18,6 +18,7 @@ exports.sort = function(req, res) {
         dataArray.push(row)
     })
     .on("end", () => {
+        //sorting final array of row objects
         dataArray.sort(function (a, b) {
             if (a.title > b.title) return 1;
             if (a.title < b.title) return -1;
