@@ -9,8 +9,10 @@
   "author": "Simran Bhatt",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "csv-parser": "^3.0.0",
+    "csv-stringify": "^6.2.0",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "fs": "^0.0.1-security",

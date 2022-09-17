@@ -2,8 +2,6 @@ const fileStream = require('fs')
 const csv = require("csv-parser")
 var removeBOM = require('remove-bom-stream');
 
-require('dotenv').config({path: '../.env'})
-
 //function to read csv file based on file name passed in GET params
 exports.read = function(req, res) {
     var dataArray = [];

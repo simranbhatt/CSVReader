@@ -1,8 +1,8 @@
-const urlHead = "http://localhost:3000/";
+const uriHead = "http://localhost:3000/";
 
-async function constructTable(url, selector) {
+async function constructTable(uri, selector) {
     clearTable();
-    fetch(urlHead + url)
+    fetch(uriHead + uri)
     .then((response) => response.json())
     .then((data) => { 
         if(!Array.isArray(data)) {
@@ -46,8 +46,8 @@ async function processHeaderData(row, selector) {
 async function searchByISBN() {
     var isbn = document.getElementById("search").value;
     if(isbn.length > 0) {
-    var url = 'findByISBN/'+ isbn
-    constructTable(url, '#table')
+    var uri = 'findByISBN/'+ isbn
+    constructTable(uri, '#table')
     }
 }
 
@@ -55,8 +55,8 @@ async function searchByISBN() {
 async function searchByAuthor() {
     var email = document.getElementById("search").value;
     if(email.length > 0) {
-    var url = 'findByAuthor/'+ email
-    constructTable(url, '#table')
+    var uri = 'findByAuthor/'+ email
+    constructTable(uri, '#table')
     }
 }
 
