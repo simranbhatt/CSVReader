@@ -1,6 +1,6 @@
-# CSVReader
+# CSV Read, Write, Search, and Sort
 APIs to read and write data from and to any CSV file.
-Included: APIs to search through book/magazine CSV data based on ISBN and author email, and sort book/magazine CSV data in order of titles t
+Included: APIs to search through book/magazine CSV data based on ISBN and author email, and sort book/magazine CSV data in order of titles.
 Basic UI to view and search for book/magazine/author has been included.
 
 ### Prerequisites
@@ -45,7 +45,7 @@ https://nodejs.org/en/download/
    
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-###Usage
+### Usage
 
 > To use the view/search functionalities from the UI, you can simply open index.html in the CSVReader directory.
 
@@ -62,31 +62,33 @@ https://nodejs.org/en/download/
   * Write to a CSV file and save it in the "files" directory  (or any file directory you have specified in your .env file):
      ```sh
     http://localhost:3000/writeFile/{filename}
-    ```
+      ```
     the contents of the file should be specified in JSON in the request body. The expected format is: 
     
-    ```json
-   [
-   {
-    "columnname1":"column contents", 
-    "columnname2":"column contents"
-    }  
-  ] 
-  ```  
+      ```json
+      [
+         {
+         "columnname1": "column contents",
+         "columnname2": "column contents"
+         }
+      ]
+      ```
+ 
   with any number of columns and objects.
   
   * Get sorted books and magazines from the provided sample files:
     ```sh
     http://localhost:3000/sortedTitles
     ```
-  *Get book based on ISBN:
-  ```sh
+  * Get book based on ISBN:
+    ```sh
     http://localhost:3000/findByISBN/{isbn}
-    ```
-  *Get book based on author email address:
-   ```sh
-    http://localhost:3000/findByAuthor/{email}
-    ```
+     ```
+  * Get book based on author email address:
+    ```sh
+    http://localhost:3000/findByISBN/{email}
+     ```
+   
 
 
 
