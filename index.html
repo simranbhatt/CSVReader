@@ -1,6 +1,6 @@
-<!DOCTYPE HTML> 
-<html> 
- 
+<!DOCTYPE HTML>
+<html>
+
 <head>
     <title>
         Books and Magazines
@@ -10,34 +10,35 @@
     <script src=index.js></script>
     <link rel="stylesheet" href="style.css">
 </head>
- 
-<body style = "text-align:center;" id = "body"> 
+
+<body style="text-align:center;" id="body">
 
     <input type="text" id="search" name="searchbar"><br>
     <br>
-    <button class="button-39" role="button" onclick = "searchByISBN()">
+    <button class="button-39" role="button" onclick="searchByISBN()">
         search by ISBN
     </button>
-    <button class="button-39" role="button" onclick = "searchByAuthor()">
+    <button class="button-39" role="button" onclick="searchByAuthor()">
         search by author email
     </button>
     <br><br>
-    <button class="button-39" role="button" onclick = "constructTable('readFile/authors', '#table')">
+    <button class="button-39" role="button" onclick="constructTable('readFile/authors', '#table')">
         list authors
     </button>
-    <button class="button-39" role="button" onclick = "constructTable('readFile/magazines', '#table')">list magazines</button>
-    <button class="button-39" role="button" onclick = "constructTable('readFile/books', '#table')">
+    <button class="button-39" role="button" onclick="constructTable('readFile/magazines', '#table')">list
+        magazines</button>
+    <button class="button-39" role="button" onclick="constructTable('readFile/books', '#table')">
         list books
     </button>
-    <button class="button-39" role="button" onclick = "constructTable('sortedTitles', '#table')">
+    <button class="button-39" role="button" onclick="constructTable('sortedTitles', '#table')">
         list sorted books and magazines
     </button>
-    <button class="button-39" role="button" onclick = "clearTable()">
+    <button class="button-39" role="button" onclick="clearTable()">
         clear table
     </button>
     <br><br>
-    <table id="table" align = "center" border="1"></table>
-     
-</body> 
- 
+    <table id="table" align="center" border="1"></table>
+
+</body>
+
 </html>

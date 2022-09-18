@@ -3,7 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 var cors = require('cors');
-app.use(cors({origin: 'http://localhost:'+process.env.CLIENTPORT}));
+app.use(cors());
 app.use(express.json());
 const stringify = require('csv-stringify');
 //APIs
