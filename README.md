@@ -34,7 +34,7 @@ https://nodejs.org/en/download/
    You can add your desired port values and file/directory paths as required. 
     
    If you intend to use the UI, and have changed the default port value, ensure that '3000' is replaced in line 1 of index.js (with the server port number you have specified in your .env file):
-```sh
+   ```sh
    const uriHead = "http://localhost:{PORT}/";
    ```
 7. You're good to go!
