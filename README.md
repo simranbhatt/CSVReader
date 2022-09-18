@@ -64,14 +64,15 @@ https://nodejs.org/en/download/
     http://localhost:3000/writeFile/{filename}
     ```
     the contents of the file should be specified in JSON in the request body. The expected format is: 
-    ```sh
+    
+    ```json
    [
    {
     "columnname1":"column contents", 
     "columnname2":"column contents"
     }  
-  ]  
-  ```
+  ] 
+  ```  
   with any number of columns and objects.
   
   * Get sorted books and magazines from the provided sample files:
